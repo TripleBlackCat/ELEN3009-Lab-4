@@ -13,6 +13,9 @@ const float PI = 3.14159265359;
 
 int main()
 {
+    //The sinusoids are not smooth because of the number of sampling points in the sampler class
+    
+    
 	// setup Graph with Display
 	const int WIDTH = 800;
 	const int HEIGHT = 600;
