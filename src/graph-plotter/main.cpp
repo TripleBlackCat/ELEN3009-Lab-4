@@ -74,3 +74,6 @@ int main()
 
 	return 0;
 }
+
+//Exercise 3.5: More types of curves such as log graphs can be implemented by adding onto the design and not changing the design.
+//The graph axes can be drawn by plotting solid straight lines, the x and y axis can be plotted using the polynomial with the solid line to draw it, the axes will be two graphs and another graph will need to be drawn over it.
