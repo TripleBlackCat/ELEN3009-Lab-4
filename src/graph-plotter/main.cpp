@@ -1,5 +1,7 @@
 #include "Graph.h"
 #include "Sinusoid.h"
+#include "Exponential.h"
+#include "Polynomial.h"
 #include "Sampler.h"
 #include "Display.h"
 #include "SolidLineStyle.h"
@@ -39,11 +41,29 @@ int main()
 	SolidLineStyle solid_blue{Colour::Blue, display};
 	graph.plot(generateDataPoints(cosine_function, range), solid_blue);
     
-    DashedLineStyle dashed_red{Colour::Green, display};
-	graph.plot(generateDataPoints(sine_function, range), dashed_red);
+    DashedLineStyle dashed_green{Colour::Green, display};
+	graph.plot(generateDataPoints(sine_function, range), dashed_green);
 
-    DottedLineStyle dotted_blue{Colour::Red, display};
-	graph.plot(generateDataPoints(cosine_function, range), dotted_blue);
+    DottedLineStyle dotted_red{Colour::Red, display};
+	graph.plot(generateDataPoints(cosine_function, range), dotted_red);
+    
+    vector<float> polyCoeffs = {1, 2, 1};
+    Polynomial poly_function{polyCoeffs};
+    
+    float expA = 1;
+    float expB = 1.5;
+    Exponential exp_function{expA, expB};
+    
+    
+    Range newRange{-3, 1.5}; 
+    
+    SolidLineStyle solid_green_exp{Colour::Green, display};
+    graph.plot(generateDataPoints(poly_function, newRange), solid_green_exp);
+    
+    
+    SolidLineStyle solid_red_exp{Colour::Red, display};
+    graph.plot(generateDataPoints(exp_function, newRange), solid_red);
+    
 
 	return 0;
 }
