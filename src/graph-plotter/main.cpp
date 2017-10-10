@@ -8,6 +8,7 @@
 #include "DashedLineStyle.h"
 #include "DottedLineStyle.h"
 #include "Points.h"
+#include "Absolute.h"
 #include <memory>
 
 using std::shared_ptr;
@@ -64,6 +65,12 @@ int main()
     SolidLineStyle solid_red_exp{Colour::Red, display};
     graph.plot(generateDataPoints(exp_function, newRange), solid_red);
     
+    vector<float> absCoeffs = {1, -3, -4};
+ 	shared_ptr<Polynomial> poly_function_ptr = make_shared<Polynomial> (absCoeffs);
+    Absolute abs_poly_function (poly_function_ptr);
+ 	Range absRange{-4, 7}; 
+    SolidLineStyle solid_blue_abs{Colour::Blue, display};
+    graph.plot(generateDataPoints(abs_poly_function, absRange), solid_blue_abs); 
 
 	return 0;
 }
