@@ -3,6 +3,8 @@
 #include "Sampler.h"
 #include "Display.h"
 #include "SolidLineStyle.h"
+#include "DashedLineStyle.h"
+#include "DottedLineStyle.h"
 #include "Points.h"
 #include <memory>
 
@@ -36,7 +38,12 @@ int main()
 
 	SolidLineStyle solid_blue{Colour::Blue, display};
 	graph.plot(generateDataPoints(cosine_function, range), solid_blue);
+    
+    DashedLineStyle dashed_red{Colour::Green, display};
+	graph.plot(generateDataPoints(sine_function, range), dashed_red);
+
+    DottedLineStyle dotted_blue{Colour::Red, display};
+	graph.plot(generateDataPoints(cosine_function, range), dotted_blue);
 
 	return 0;
 }
-
