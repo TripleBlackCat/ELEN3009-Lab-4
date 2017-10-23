@@ -12,7 +12,7 @@ public:
    void hours( double );	// set the number of hours worked
    
    virtual double earnings() const override;
-   void print() const;
+   virtual void print() const;
 
 private:
    double _wage;   // wage per hour

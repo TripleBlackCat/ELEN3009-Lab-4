@@ -35,6 +35,10 @@ int main()
 	cout << endl;
 	cout << "Why is the output below not identical to the output above ?" << endl;
 	cout << endl;
+    
+    // The first 2 objects were created as types FixedRateWorkers and HourlyWorkers and when the print function was called it called the print function from the Fixed and hourly class.
+    // The next two objects were of type Employee and used the Employee defined print function. The print function in the Employee class should be defined as a virtual function to allow
+    // the derived classes to overrite the print function.
 
 	shared_ptr<Employee> employee1_ptr = make_shared<FixedRateWorker>("Ted", "Ramgasamy", 905.00);
 	shared_ptr<Employee> employee2_ptr = make_shared<HourlyWorker>("Louisa", "Mahlungu", 12.00, 52);
